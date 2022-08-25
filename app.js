@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const Sport = require('./models/sports.js');
+const Fact = require('./models/facts.js');
+const Comment = require('./models/comments.js');
 const methodOverride = require('method-override');
 const sportsController = require('./controllers/sportsController.js')
 
@@ -38,7 +40,7 @@ app.get('/', (req, res) => {
 
 
 // LISTENER
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 app.listen(port, ()=> {
-    console.log("Products running on port: ", port)
+    console.log("🤾🏼‍♀️ running on port: ", port)
   })

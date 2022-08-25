@@ -1,0 +1,255 @@
+/* ------------------------------------------------------------------------
+                            DISPLAY FLEX           
+------------------------------------------------------------------------ */
+#content-sports{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+#content-index{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
+    width: 452px;
+    overflow: hidden;
+  }
+
+
+/* ------------------------------------------------------------------------
+                             WIDTH              
+------------------------------------------------------------------------ */
+#header{
+    width: 100%;
+}
+
+#footer
+{
+    width: 1366px;
+}
+
+#title,
+#imgHome
+{
+    width: 1110px;
+}
+#content-index1{
+    width: 530px;
+}
+#content,
+#content1
+{
+    width: 1110px;
+}
+
+#footerTop,
+#footerBottom
+{
+    width: 109.33px;
+}
+#sportpediasBKG{
+    width: 250px;
+}
+
+/* ------------------------------------------------------------------------
+                            HEIGHT              
+------------------------------------------------------------------------ */
+#content-index1{
+    height: 195px;
+}
+
+#header{
+    height: 120px;
+}
+#title,
+#imgHome,
+#content{
+    height: 320px;
+}
+#footerTop,
+#footerBottom
+{
+    height: 27px;
+}
+#sportpediasBKG{
+    height: 40px;
+}
+#footer{
+    height: 65px;
+}
+
+/* ------------------------------------------------------------------------
+                             PADDING            
+------------------------------------------------------------------------ */
+#header{
+    padding-top: 22px;
+}
+#content{
+    padding: 24px 24px 24px 24px;
+}
+
+#bodyGrey{
+    padding-top: 16px;
+}
+#tabs{
+    padding-top: 16px;
+}
+#footerTop{
+    padding-top: 4px;
+}
+#content-index{
+    padding-top: 24px;
+}
+
+
+
+/* ------------------------------------------------------------------------
+                             BORDER           
+------------------------------------------------------------------------ */
+
+#title,
+#content,
+#content-index1,
+#sportpediasBKG,
+#footerTop,
+#imgHome
+{
+   border-radius: 10px;
+}
+
+
+/* ------------------------------------------------------------------------
+                            MARGIN            
+------------------------------------------------------------------------ */
+#footer{
+    margin-top: 147px;
+}
+#content{
+    margin-top: 24px;
+
+}
+#content-index1{
+    margin-bottom: 24px;
+}
+#read-more{
+    margin-left: 24px;
+}
+#content,
+ #content1, /*trying to center */
+#content-index,
+#title,
+#sportpediasBKG,
+#footerTop,
+#footerBottom{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------------------------------------
+                            BACKGROUND           
+------------------------------------------------------------------------ */
+#bodyGrey,
+#footerBottom,
+body
+{
+    background-color: #F2F2F2;
+}
+#title{
+    background-image: url("/images/home.jpeg");
+}
+#content,
+#content-index1,
+#header
+{
+    background-color: white;
+}
+#footerTop,
+#sportpediasBKG
+{
+    background-color: #EB5757;
+}
+
+/* ------------------------------------------------------------------------
+                            TEXT COLOR            
+--------------------------------------------------------------------------- */
+#footerBottom a,
+#tabsText,
+#link-read{
+    text-decoration: none
+}
+#link-read{
+    color: #EB5757;
+}
+#footerBottom a,
+#tabsText{
+    color: #5E6770;
+}
+#footerTop label{
+color:#F2F2F2;
+}
+#sportpediasName{
+    color: white;
+}
+
+#link-read{
+    font-weight: bolder
+}
+/* ---------------------------------------------------------------------------
+                            FONT STYLE         
+--------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+#content, #tabs,
+#footerBottom,
+#content1{
+    font-family: 'Lato', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+#about{
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+#sportpediasName,
+#footerTop
+{
+    font-family: 'Faster One', cursive;
+
+} 
+
+
+/* ------------------------------------------------------------------------
+                            FONT SIZE           
+------------------------------------------------------------------------ */
+#footerTop{
+    font-size: 12px;
+}
+#sportpediasName{
+    font-size: 32px;
+}
+
+
+/* ------------------------------------------------------------------------
+                                 TEXT ALIGN       
+------------------------------------------------------------------------ */
+#footer{
+    text-align: center;
+}
+
+
+/* ------------------------------------------------------------------------
+                                    c       
+------------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------------
+                                
+------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------
+                            c            
+------------------------------------------------------------------------ */
+
+

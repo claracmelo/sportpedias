@@ -1,3 +1,43 @@
 <%- include('./partials/header.ejs') %>
-<h1>it works - index </h1>
+
+<div id="content1">
+  <div id="content-sports">
+  <% for(let i=0; i < sports.length; i++) { let sportNumber=i + 1 %>
+    <div id="content-index1">
+      <div id="content-index">
+        <p>
+          <label for="title" id="about">
+
+            <%= sports[i].sport %>
+
+          </label>
+          <br><br>
+          <%= sports[i].about %>
+            <br>
+      </div>
+      <br>
+      <div id="read-more">
+        <a href="/sportpedias/sports/<%= sports[i].id %>" id="link-read">
+          read more
+        </a>
+        <form action="/sportpedias/sports/<%=sports[i].id%>?_method=DELETE" method="POST">
+          <button>DELETE</button>
+        </form>
+      </div>
+      </p>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+
+
+
+
+                <!-- <a href="/sportpedias/new"><button>NEW</button></a>
+                <a href="/sportpedias/soccer/edit"><button>EDIT</button></a>
+                <a href="/sportpedias/soccer/facts"><button>FACTS</button></a>
+                <a href="/sportpedias/soccer/comments"><button>COMMENTS</button></a>
+                <a href="/sportpedias/soccer/rules"><button>RULES</button></a>-->
+
 <%- include('./partials/footer.ejs') %>
