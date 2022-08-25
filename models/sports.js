@@ -1,8 +1,5 @@
 const mongoose = require("mongoose")
 
-
-
-
 //CRETE SCHEMA SPORTS
 const sportSchema = new mongoose.Schema({
     sport: {type:String, required:true},

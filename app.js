@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const Sport = require('./models/sports.js');
-const Fact = require('./models/facts.js');
+const Fact = require('./models/sports.js');
 const Comment = require('./models/comments.js');
 const methodOverride = require('method-override');
 const sportsController = require('./controllers/sportsController.js')
@@ -32,7 +32,6 @@ app.use('/sportpedias', sportsController)
 // DEFAULT
 app.get('/', (req, res) => {
   res.redirect("/sportpedias")
-
 });
 
 

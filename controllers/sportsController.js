@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router()
 const Sport = require('../models/sports.js')
+const Fact = require('../models/facts.js')
+const Comment = require('../models/comments.js')
 
 //HOME
 router.get('/', async (req, res) => {
@@ -15,7 +17,7 @@ router.get('/sports', async (req, res) => {
 	res.render('index.ejs', { sports });
 });
 
-// SEED
+// SEED sports
 router.get('/seed', (req, res) => {
 	Sport.create(
 		[
@@ -30,6 +32,23 @@ router.get('/seed', (req, res) => {
 		}
 	);
 });
+
+//SEED fact
+router.get('/seedf', (req, res) => {
+	Fact.create(
+		[
+			{
+				name: "Clara Lima",
+				fact: "Brazil won 5 times World Cup",
+				img: "https://pbs.twimg.com/media/FEXBr0rXIA48Wy3.jpg"
+			},
+		],
+		(err, data) => {
+			res.redirect('/sportpedias/sports');
+		}
+	);
+});
+
 // // NEW
 // router.get('/new', (req, res) => {
 // 	res.render('new.ejs');
@@ -100,13 +119,17 @@ router.get('/sports/:id/rules', async (req, res) => {
 		sport: sport,
 	});
 });
-// //CREATE FACT
+// //SHOW FACT
+
 router.get('/sports/:id/facts', async (req, res) => {
-	const sport = await Sport.findById(req.params.id);
-	res.render('fact.ejs', {
-		sport: sport,
+	const facts = await Fact.find({});
+	let sports = await Sport.find({});
+	res.render('fact.ejs', { 		
+		facts: facts,
+		sport:sports
 	});
 });
+
 
 // // DELETE FACT
 // router.delete('/soccer/:id/comment', (req, res) => {
