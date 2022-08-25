@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+
+<form action="/sportpedias/sports/<%=sport.id%>>/facts/<%= fact.id %>?_method=PUT" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name: </label>
+          <input class="form-control" type="text" name="name" value="<%=fact.name%>"/>
+        </div>
+        <div class="mb-3">
+          <label for="fact" class="form-label">Fact: </label>
+           <input class="form-control" type="text" name="fact" value="<%=fact.fact %>"/>
+        </div>
+        <div>
+          <label for="img" class="form-label">Image's URL:  </label>
+          <input class="form-control" type="text" name="img" value="<%=fact.img%>"/>
+        </div>
+    </div>
+          <input id="subButton" class="form-control" type="submit" name="subB" value="Submit Changes"/>
+  </form>
+</div>
+<%- include('./partials/footer.ejs') %>

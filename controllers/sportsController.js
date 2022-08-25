@@ -4,20 +4,12 @@ const Sport = require('../models/sports.js')
 const Fact = require('../models/facts.js')
 const Comment = require('../models/comments.js')
 
-//HOME
-router.get('/', async (req, res) => {
-	let sports = await Sport.find({});
-	res.render('home.ejs', { sports });
-});
+//----------------------------------------------------------
+//					SEEDS
+//----------------------------------------------------------
 
-// INDEX
-// ASYNC & AWAIT
-router.get('/sports', async (req, res) => {
-	let sports = await Sport.find({});
-	res.render('index.ejs', { sports });
-});
+// SEED sports http://localhost:3001/sportpedias/seed or https://sportpedias.herokuapp.com/sportpedias/seed
 
-// SEED sports
 router.get('/seed', (req, res) => {
 	Sport.create(
 		[
@@ -33,7 +25,8 @@ router.get('/seed', (req, res) => {
 	);
 });
 
-//SEED fact
+//SEED fact http://localhost:3001/sportpedias/seedf or https://sportpedias.herokuapp.com/sportpedias/seedf
+
 router.get('/seedf', (req, res) => {
 	Fact.create(
 		[
@@ -49,18 +42,38 @@ router.get('/seedf', (req, res) => {
 	);
 });
 
-// // NEW
-// router.get('/new', (req, res) => {
-// 	res.render('new.ejs');
-// });
+//----------------------------------------------------------
+//					MAIN - SPORTPEDIAS
+//----------------------------------------------------------
+//HOME - WORKING
+router.get('/', async (req, res) => {
+	let sports = await Sport.find({});
+	res.render('home.ejs', { sports });
+});
 
-// // SHOW -- 
+//----------------------------------------------------------
+//					SPORTS
+//----------------------------------------------------------
+
+// INDEX - WORKING
+// ASYNC & AWAIT
+router.get('/sports', async (req, res) => {
+	let sports = await Sport.find({});
+	res.render('index.ejs', { sports });
+});
+
+// // SHOW -- WORKING
 router.get('/sports/:id', async (req, res) => {
 	const sport = await Sport.findById(req.params.id);
 	res.render('show.ejs', {
 		sport: sport,
 	});
 });
+
+// // NEW
+// router.get('/new', (req, res) => {
+// 	res.render('new.ejs');
+// });
 
 // // CREATE
 // router.post('/sports', (req, res) => {
@@ -73,15 +86,6 @@ router.get('/sports/:id', async (req, res) => {
 // 		}
 // 	});
 // });
-
-// DESTROY
-router.delete('/sports/:id', (req, res) => {
-	Sport.findByIdAndRemove(req.params.id, (err, data)=> {
-		if(err) 
-		console.log("error to delete",err)
-		res.redirect('/sportpedias/sports')
-	})
-})
 
 // // EDIT
 // router.get('/:id/edit', (req, res) => {
@@ -97,13 +101,43 @@ router.delete('/sports/:id', (req, res) => {
 // 	})
 // })
 
-// //CREATE CONTACT
+// DESTROY - WORKING
+router.delete('/sports/:id', (req, res) => {
+	Sport.findByIdAndRemove(req.params.id, (err, data)=> {
+		if(err) 
+		console.log("error to delete",err)
+		res.redirect('/sportpedias/sports')
+	})
+})
+
+
+//----------------------------------------------------------
+//					CONTACT
+//----------------------------------------------------------
+
+//SHOW CONTACT
 router.get('/contact', async (req, res) => {
 	const sport = await Sport.findById(req.params.id);
 	res.render('contact.ejs', {
 		sport: sport,
 	});
 });
+
+// //CREATE CONTACT
+router.post('/contact', (req, res) => {
+	Sport.create(req.body, (error, createdSport) => {
+		if (error) {
+			console.log('error to create', error);
+			res.send(error);
+		} else {
+			res.redirect('/sportpedias');
+		}
+	});
+});
+
+//----------------------------------------------------------
+//					COMMENT
+//----------------------------------------------------------
 
 // //CREATE COMMENT
 // router.get('/:id/comments', async (req, res) => {
@@ -112,6 +146,10 @@ router.get('/contact', async (req, res) => {
 // 		sport: sport,
 // 	});
 // });
+
+//----------------------------------------------------------
+//						RULES
+//----------------------------------------------------------
 // //SHOW RULES
 router.get('/sports/:id/rules', async (req, res) => {
 	const sport = await Sport.findById(req.params.id);
@@ -119,40 +157,59 @@ router.get('/sports/:id/rules', async (req, res) => {
 		sport: sport,
 	});
 });
-// //SHOW FACT
 
+//----------------------------------------------------------
+//						FACT
+//----------------------------------------------------------
+
+// //INDEX FACT - WORKS
 router.get('/sports/:id/facts', async (req, res) => {
+	const sports = await Sport.findById(req.params.id);
+	// const fact = await Fact.findById(req.params.idf);
 	const facts = await Fact.find({});
-	let sports = await Sport.find({});
-	res.render('fact.ejs', { 		
+	res.render('fact.ejs', { 	
+		// fact: fact,	
 		facts: facts,
-		sport:sports
+		sports: sports
 	});
 });
 
+//SHOW FACT
+router.get('/sports/:id/facts/:idf', async (req, res) => {
+	const fact = await Fact.findById(req.params.idf);
+	const sport = await Sport.findById(req.params.id);
+	res.render('fact.ejs', {
+		fact: fact,
+		sport: sport
+	});
+});
 
-// // DELETE FACT
-// router.delete('/soccer/:id/comment', (req, res) => {
-// 	Sport.findByIdAndRemove(req.params.id, (err, data)=> {
-// 		if(err) 
-// 		console.log("error to delete",err)
-// 		res.redirect('/sportpedias/soccer/facts')
-// 	})
-// })
+// DELETE FACT -- WORKS
+router.delete('/sports/:id/facts/:idf', (req, res) => {
+	Fact.findByIdAndRemove(req.params.idf, (err, data)=> {
+		if(err) 
+		console.log("error to delete",err)
+		res.redirect(`/sportpedias/sports/${req.params.id}/facts`)
+	})
+})
 
-// // EDIT FACT
-// router.get('/:id/facts/edit', (req, res) => {
-// 	Sport.findById(req.params.id, (err, foundSport) => {
-// 		res.render('edit.ejs', {sport: foundSport})
-// 	})
-// })
+// // EDIT FACT -- WORKS
+router.get('/sports/:id/facts/:idf/edit', (req, res) => {
+	const sport = Sport.findById(req.params.id);
+	Fact.findById(req.params.idf, (err, factFound) => {
+		res.render('editF.ejs', {fact: factFound, sport:sport})
+	})
+})
 
 // // UPDATE FACT
-// router.put('/:id/facts', (req, res) => {
-// 	Sport.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-// 		res.redirect(`/sportpedias/soccer/facts`)
-// 	})
-// })
+router.put('/sports/:id/facts/:idf', (req, res) => {
+	
+	Fact.findByIdAndUpdate(req.params.idf, req.body, {new:true}, (err, updatedModel) => {
+		const sport = Sport.findById(req.params.id);
+		sport:sport,
+		res.redirect(`/sportpedias/${req.params.id}/facts`)
+	})
+})
 
 
 module.exports = router

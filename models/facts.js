@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const factSchema = new mongoose.Schema({
     name: {type:String, required:true},
     fact: {type:String, required:true},
-    img: {type:String}
+    img: String
 });
 
 //CREATE MODEL FACTS
