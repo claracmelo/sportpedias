@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs') %>
 
-<form action="/sportpedias/sports/<%=sport.id%>>/facts/<%= fact.id %>?_method=PUT" method="POST">
+<form action="../<%= fact.id %>?_method=PUT" method="POST">
     <div class="mb-3">
       <label for="name" class="form-label">Name: </label>
           <input class="form-control" type="text" name="name" value="<%=fact.name%>"/>

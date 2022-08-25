@@ -1,3 +1,21 @@
 <%- include('./partials/header.ejs') %>
-<h1>it works - contacts</h1>
+<form method="POST" action="/sportpedias">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name: </label>
+          <input class="form-control" d="name" type="text" name="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">email: </label>
+           <input class="form-control" id="email" type="text" name="email" placeholder="Enter your email">
+        </div>
+        <div >
+          <label for="message" class="form-label">Message:  </label>
+          <input class="form-control" id="img" type="text" name="message" placeholder="Enter your message">
+        </div>
+
+          <br>
+    
+          <input id="subButton" class="form-control" type="submit" name="" value="Send message"/>
+      </form>
+    </div>
 <%- include('./partials/footer.ejs') %>

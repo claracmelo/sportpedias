@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router()
 const Sport = require('../models/sports.js')
 const Fact = require('../models/facts.js')
+const Contact = require('../models/contact.js')
 const Comment = require('../models/comments.js')
 
 //----------------------------------------------------------
@@ -41,6 +42,23 @@ router.get('/seedf', (req, res) => {
 		}
 	);
 });
+
+router.get('/seedc', (req, res) => {
+	Contact.create(
+		[
+			{
+				name: "Clara Lima",
+				email: "claracmelo@hotmail.com",
+				message: "oi"
+			},
+		],
+		(err, data) => {
+			res.redirect('/sportpedias/sports');
+		}
+	);
+});
+
+//SEED fact http://localhost:3001/sportpedias/seedc or https://sportpedias.herokuapp.com/sportpedias/seedc
 
 //----------------------------------------------------------
 //					MAIN - SPORTPEDIAS
@@ -115,17 +133,14 @@ router.delete('/sports/:id', (req, res) => {
 //					CONTACT
 //----------------------------------------------------------
 
-//SHOW CONTACT
-router.get('/contact', async (req, res) => {
-	const sport = await Sport.findById(req.params.id);
-	res.render('contact.ejs', {
-		sport: sport,
-	});
+//SHOW CONTACT -- WORKS
+router.get('/contact', (req, res) => {
+	res.render('contact.ejs');
 });
 
-// //CREATE CONTACT
-router.post('/contact', (req, res) => {
-	Sport.create(req.body, (error, createdSport) => {
+// //CREATE CONTACT - WORKS
+router.post('/', (req, res) => {
+	Contact.create(req.body, (error, createContact) => {
 		if (error) {
 			console.log('error to create', error);
 			res.send(error);
@@ -174,7 +189,7 @@ router.get('/sports/:id/facts', async (req, res) => {
 	});
 });
 
-//SHOW FACT
+//SHOW FACT - WORKS
 router.get('/sports/:id/facts/:idf', async (req, res) => {
 	const fact = await Fact.findById(req.params.idf);
 	const sport = await Sport.findById(req.params.id);
@@ -201,13 +216,13 @@ router.get('/sports/:id/facts/:idf/edit', (req, res) => {
 	})
 })
 
-// // UPDATE FACT
+// // UPDATE FACT -- WORKS
 router.put('/sports/:id/facts/:idf', (req, res) => {
-	
+	const sport = Sport.findById(req.params.id);
 	Fact.findByIdAndUpdate(req.params.idf, req.body, {new:true}, (err, updatedModel) => {
-		const sport = Sport.findById(req.params.id);
-		sport:sport,
-		res.redirect(`/sportpedias/${req.params.id}/facts`)
+		
+		sport:sport
+		res.redirect(`/sportpedias/sports/${req.params.id}/facts`)
 	})
 })
 
