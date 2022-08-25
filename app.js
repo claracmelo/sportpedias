@@ -33,7 +33,7 @@ app.use('/sportpedias', sportsController)
 app.get('/', (req, res) => {
 	const today = new Date();
 	res.send(`
-    <p>Thanks for using our site</p>
+    <p>Thanks for using our site SportPedias</p>
     <p>Today: ${today}</p>
   `);
 });
