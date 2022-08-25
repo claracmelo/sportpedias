@@ -154,13 +154,29 @@ router.post('/', (req, res) => {
 //					COMMENT
 //----------------------------------------------------------
 
-// //CREATE COMMENT
-// router.get('/:id/comments', async (req, res) => {
-// 	const sport = await Sport.findById(req.params.id);
-// 	res.render('show.ejs', {
-// 		sport: sport,
-// 	});
-// });
+//SHOW CONTACT -- WORKS
+router.get('/comment', (req, res) => {
+	res.render('comment.ejs');
+});
+
+//CREATE COMMENT
+	router.post('/', (req, res) => {
+		if (req.body.anonymous === 'on') {
+			req.body.anonymous = true;
+		} else {
+			req.body.anonymous = false;
+		}
+	
+		Comment.create(req.body, (error, createComment) => {
+			if (error) {
+				console.log('error', error);
+				res.send(error);
+			} else {
+				res.redirect('/sportpedias');
+			}
+		});
+	});
+	
 
 //----------------------------------------------------------
 //						RULES

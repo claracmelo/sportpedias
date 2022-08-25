@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 
 //CRETE SCHEMA COMMENTS
 const commentSchema = new mongoose.Schema({
-    name: {type:String, required:true},
+    name: String,
     anonymous: Boolean, 
-    message: {type:String, required:true}
+    comment: String
 });
 
 //CREATE MODEL COMMENTS
