@@ -31,11 +31,8 @@ app.use('/sportpedias', sportsController)
 
 // DEFAULT
 app.get('/', (req, res) => {
-	const today = new Date();
-	res.send(`
-    <p>Thanks for using our site SportPedias</p>
-    <p>Today: ${today}</p>
-  `);
+  res.redirect("/sportpedias")
+
 });
 
 
