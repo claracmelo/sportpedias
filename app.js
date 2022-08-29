@@ -6,6 +6,7 @@ const Comment = require('./models/comments.js');
 const methodOverride = require('method-override');
 const sportsController = require('./controllers/sportsController.js')
 
+
 require('dotenv').config()
 const PORT = process.env.PORT
 
