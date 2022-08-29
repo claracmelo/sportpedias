@@ -1,6 +1,10 @@
 <%- include('./partials/header.ejs') %>
-<div id="title">
-  <img id="imgHome" src="/images/soccer.jpeg" alt="home" class="img-fluid">
+
+<div id="title"  class="image">
+  <img id="imgHome" src="/images/<%=sport.sport%>.jpeg" alt="home" class="img-fluid">
+  <div id="leftTitle">  <a href="/sportpedias/sports" >
+    <button><< <%=sport.sport%></button>
+  </a>
 </div>
 
 <div id="content" >
