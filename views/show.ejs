@@ -33,16 +33,19 @@
 </div>
 <div id="content" >
   <p id="about">Comments</p>
-  <a href="/sportpedias/comment"><button>add comments</button></a>
+  <a href="/sportpedias/sports/<%= sport.id %>/comments/new"><button>add comments</button></a>
 
-  <% for(let i=0; i < sport.length; i++) { let sportNumber=i + 1 %>
-        <p>
-            <%= sport[i].sport %>
-
-          <%= sport[i].about %>
+  <% for(let i=0; i < sport.comments.length; i++) {  %>
+        <p>Nome: 
+            <%= sport.comments[i].name %>
             <br>
+comment:
+          <%= sport.comments[i].comment %>
+            <br>
+            <% } %>
       </div>
       <br>
+      <% for(let i=0; i < sport.length; i++) {  %>
       <div id="read-more">
         <a href="/sportpedias/sports/<%= sport[i].id %>" id="link-read">
           read more
@@ -54,5 +57,6 @@
       </p>
     </div>
     <% } %>
+
 </div>
 <%- include('./partials/footer.ejs') %>

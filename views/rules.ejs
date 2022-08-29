@@ -1,3 +1,16 @@
 <%- include('./partials/header.ejs') %>
-<h1>it works - rules</h1>
+<a href="/sportpedias/sports/<%=sport.id%>/rules/new"><button>new</button></a>
+<br>
+Rules
+<br>
+<ol>
+<% for(let i=0; i <sport.rules.length; i++) {  %>
+        
+        <li> 
+        <%= sport.rules[i].rule %>
+
+        </li>
+        
+        <% } %>
+    </ul> 
 <%- include('./partials/footer.ejs') %>

@@ -1,20 +1,25 @@
 <%- include('./partials/header.ejs') %>
 
-<form action="../<%= fact.id %>?_method=PUT" method="POST">
+<form action="/sportpedias/sports/<%=fact.id%>/facts/<%=index%>?_method=PUT" method="POST">
+
+  <% for(let i=0; i < fact.facts.length; i++) { %>
+    <%if( index == fact.facts[i].id ){ %>
     <div class="mb-3">
       <label for="name" class="form-label">Name: </label>
-          <input class="form-control" type="text" name="name" value="<%=fact.name%>"/>
+          <input class="form-control" type="text" name="name" value="<%=fact.facts[i].name%>"/>
+          
         </div>
         <div class="mb-3">
           <label for="fact" class="form-label">Fact: </label>
-           <input class="form-control" type="text" name="fact" value="<%=fact.fact %>"/>
+           <input class="form-control" type="text" name="fact" value="<%=fact.facts[i].fact%>"/>
         </div>
         <div>
           <label for="img" class="form-label">Image's URL:  </label>
-          <input class="form-control" type="text" name="img" value="<%=fact.img%>"/>
+          <input class="form-control" type="text" name="img" value="<%=fact.facts[i].img%>"/>
         </div>
     </div>
-          <input id="subButton" class="form-control" type="submit" name="subB" value="Submit Changes"/>
+          <input id="subButton" class="form-control" type="submit"  value="Submit Changes"/>
   </form>
 </div>
+<%} }%>
 <%- include('./partials/footer.ejs') %>

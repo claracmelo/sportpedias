@@ -1,29 +1,26 @@
 <%- include('./partials/header.ejs') %>
 
+<a href="/sportpedias/sports/<%=sport.id%>/facts/new"><button>new</button></a>
+<% for(let i=0; i < sport.facts.length; i++) { %>
 
-<% for(let i=0; i < facts.length; i++) { %>
-    <label for="name">Author: <%= facts[i].name %></a> </label> <br>
+    <label for="name">Author: <%= sport.facts[i].name %></a> </label> <br>
             
-          Fact: <label for="fact"> <%= facts[i].fact %></label>
+          Fact: <label for="fact"> <%= sport.facts[i].fact %></label>
             <br>
       <br>
       <p>
-      <img src="<%= facts[i].img%>" alt="sd">
+      <img src="<%=sport.facts[i].img%>" alt="sd">
     </p>
-      <a href="/sportpedias/sports/<%=sports.id%>/facts/<%= facts[i].id %>/edit">
+      <a href="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>/edit">
         <button>EDIT</button></a>
 
 
-  <form action="/sportpedias/sports/<%=sports.id%>/facts/<%=facts[i].id%>?_method=DELETE" method="POST">
+  <form action="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>?_method=DELETE" method="POST">
     <button>DELETE</button>
   </form>
+
 <%} %>
+
 </p>
-
-
-       
-
-
-
 
 <%- include('./partials/footer.ejs') %>
