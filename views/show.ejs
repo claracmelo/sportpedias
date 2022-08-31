@@ -2,15 +2,18 @@
 
 
   <div id="title">
-    <input type="image" id="imgHome" src="/images/<%=(sport.sport).toLowerCase()%>.jpeg" alt="home" class="img-fluid">>
+    <input type="image" id="imgHome" src="/images/<%=(sport.sport).toLowerCase()%>.jpeg" alt="home" class="img-fluid">
 
-  </div>
+  <!-- </div> -->
   <div id="leftTitle">
     <a href="/sportpedias/sports">
-      <button>&lt;&lt; <%=sport.sport%></button>
+      <button id="sportBtn">
+        <label id="textBtn" for="textBtn">&lt;&lt; <%=sport.sport%></label>
+      </button>
     </a>
+  </div>
     <div id="content">
-      <div id="tabs" class="container col-lg-10 col-xl-11 col-xxl-8">
+      <div id="tabs1" class="container col-lg-10 col-xl-11 col-xxl-8">
         <ul class="nav nav-tabs">
 
           <a id="tabsText" class="nav-link " href="/sportpedias/sports/<%= sport.id %>">About</a>
@@ -20,24 +23,28 @@
           <a id="tabsText" class="nav-link" href="/sportpedias/sports/<%= sport.id %>/facts">Facts</a>
         </ul>
       </div>
-
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat.
-
+      <div id="contentText">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat.
+      </div>
       <div id="comment">
-        <p id="about">Comments
-          <a href="/sportpedias/sports/<%= sport.id %>/comments/new"><button>add comments</button>
-          </a>
+        <div id="commentTitle" class="container">
+          <p id="about">Comments
+            <a href="/sportpedias/sports/<%= sport.id %>/comments/new"><button id="addComment"><label
+                  id="addCommentText" for="addComment">add comments</label> </button>
+            </a>
+        </div>
+
         </p>
         <div id="contentComment">
           <% for(let i=0; i < sport.comments.length; i++) { %>

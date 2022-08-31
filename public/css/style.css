@@ -15,6 +15,25 @@
     width: auto;
 }
 
+#addCommentText{
+    font-size: 12px;
+    color: white;
+}
+
+#tabs1{
+    float: left;
+    width: 1050px;
+}
+#addComment{
+float: right;
+border-radius: 10px;
+padding: 5px 10px 5px 10px;
+background-color: #EB5757;
+font-weight: normal;
+border: none;
+
+}
+
 #commentText{
 
     border-radius: 10px;
@@ -110,7 +129,14 @@
 #header{
     padding-top: 22px;
 }
+#contentText,
+#sportBtn{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 #content,
+
 #contentNew{
     padding: 24px 24px 24px 24px;
 }
@@ -118,9 +144,7 @@
 #bodyGrey{
     padding-top: 16px;
 }
-#tabs{
-    padding-top: 16px;
-}
+
 #footerTop{
     padding-top: 4px;
 }
@@ -137,6 +161,7 @@
                              BORDER           
 ------------------------------------------------------------------------ */
 
+#sportBtn,
 #title,
 #content,
 #content-index1,
@@ -148,10 +173,16 @@
    border-radius: 10px;
 }
 
+#sportBtn
+{
+    border: none;
+}
 
 /* ------------------------------------------------------------------------
                             MARGIN            
 ------------------------------------------------------------------------ */
+
+
 #footer{
     margin-top: 147px;
 }
@@ -204,7 +235,8 @@ body,
     background-color: white;
 }
 #footerTop,
-#sportpediasBKG
+#sportpediasBKG,
+#sportBtn
 {
     background-color: #EB5757;
 }
@@ -227,7 +259,9 @@ body,
 #footerTop label{
 color:#F2F2F2;
 }
-#sportpediasName{
+#sportpediasName,
+#textBtn
+{
     color: white;
 }
 
@@ -242,6 +276,7 @@ color:#F2F2F2;
 #content, 
 #contentNew,
 #tabs,
+#tabs1,
 #footerBottom,
 #content1{
     font-family: 'Lato', sans-serif;
