@@ -1,5 +1,13 @@
 <%- include('./partials/header.ejs') %>
 
+<div id="title">
+    <img id="imgHome" src="/images/list.jpeg" alt="home" class="img-fluid">
+</div>
+<!-- it needs a div id different -->
+<div id="content" >
+
+
+
 <a href="/sportpedias/sports/<%=sport.id%>/facts/new"><button>new</button></a>
 <% for(let i=0; i < sport.facts.length; i++) { %>
 

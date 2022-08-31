@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const Sport = require('./models/sports.js');
-const Fact = require('./models/sports.js');
-const Comment = require('./models/comments.js');
+const Contact = require('./models/contact.js');
+
 const methodOverride = require('method-override');
 const sportsController = require('./controllers/sportsController.js')
 

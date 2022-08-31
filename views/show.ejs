@@ -34,23 +34,23 @@
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
         ex ea commodo consequat.
 
-    <div id="comment">
-      <p id="about">Comments
-      <a href="/sportpedias/sports/<%= sport.id %>/comments/new"><button>add comments</button>
-      </a>
-    </p>
-      <div id="contentComment">
-      <% for(let i=0; i < sport.comments.length; i++) { %>
-        <div id="commentText">
-        <p>By: 
-        <%= sport.comments[i].name %>
-        <br>
-        
-        <%= sport.comments[i].comment %>
-      </div>
-        <% } %>
+      <div id="comment">
+        <p id="about">Comments
+          <a href="/sportpedias/sports/<%= sport.id %>/comments/new"><button>add comments</button>
+          </a>
+        </p>
+        <div id="contentComment">
+          <% for(let i=0; i < sport.comments.length; i++) { %>
+            <div id="commentText">
+              <p>By:
+                <%= sport.comments[i].name %>
+                  <br>
+
+                  <%= sport.comments[i].comment %>
+            </div>
+            <% } %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-    <%- include('./partials/footer.ejs') %>
+  <%- include('./partials/footer.ejs') %>

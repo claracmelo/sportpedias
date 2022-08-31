@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const Sport = require('../models/sports.js')
 const Contact = require('../models/contact.js')
-const Comment = require('../models/comments.js')
+
 
 //----------------------------------------------------------
 //					SEEDS
@@ -157,7 +157,7 @@ router.post('/', (req, res) => {
 			console.log('error to create', error);
 			res.send(error);
 		} else {
-			res.redirect('/sportpedias',{sport:sport});
+			res.redirect('/sportpedias');
 		}
 	});
 });
