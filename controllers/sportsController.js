@@ -14,7 +14,7 @@ router.get('/seed', (req, res) => {
 	Sport.create(
 		[
 			{
-				sport: 'SOCCER',
+				sport: 'SOCCER', 
 				author: 'Clara Lima', 
 				about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap",
 				rules: [{
@@ -151,12 +151,13 @@ router.get('/contact', (req, res) => {
 
 // //CREATE CONTACT - WORKS
 router.post('/', (req, res) => {
+
 	Contact.create(req.body, (error, createContact) => {
 		if (error) {
 			console.log('error to create', error);
 			res.send(error);
 		} else {
-			res.redirect('/sportpedias');
+			res.redirect('/sportpedias',{sport:sport});
 		}
 	});
 });
@@ -244,18 +245,18 @@ router.put('/sports/:id/rules/:idr', (req, res) => {
 
 // //INDEX FACT - WORKS
 router.get('/sports/:id/facts', async (req, res) => {
-	const sports = Sport.find({});
 	const sport = await Sport.findById(req.params.id);
 	res.render('fact.ejs', { 	
-		sport: sport,sports:sports
+		sport: sport
 	});
 });
 
 // // NEW FACT -- WORKS
 router.get('/sports/:id/facts/new', (req, res) => {
+	const sports = Sport.find({});
 	const sport = Sport.findById(req.params.id);
 	res.render('newFact.ejs', { 	
-		sport: sport,
+		sports: sports,sport: sport,
 	});
 });
 

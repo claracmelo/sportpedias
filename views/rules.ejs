@@ -1,16 +1,28 @@
 <%- include('./partials/header.ejs') %>
-<a href="/sportpedias/sports/<%=sport.id%>/rules/new"><button>new</button></a>
-<br>
-Rules
-<br>
-<ol>
-<% for(let i=0; i <sport.rules.length; i++) {  %>
-        
-        <li> 
-        <%= sport.rules[i].rule %>
 
-        </li>
-        
-        <% } %>
-    </ul> 
+       
+    <div id="title">
+        <img id="imgHome" src="/images/<%=(sport.sport).toLowerCase()%>.jpeg" alt="home" class="img-fluid">
+    </div>
+    <!-- it needs a div id different -->
+    <div id="content" >
+        <!-- rules name -- it needs a div id -->
+        <div>
+            <p id="about">Rules</p>
+            <a href="/sportpedias/sports/<%=sport.id%>/rules/new"><button>new</button></a>
+        </div>
+        <!-- Rules list -- it needs a div id -->
+        <div>
+        <p>
+            <ol>
+                <% for(let i=0; i <sport.rules.length; i++) {  %>                        
+                    <li> 
+                    <%= sport.rules[i].rule %>                
+                    </li>                        
+                <% } %>
+            </ol> 
+        </p>
+    </div>
+    </div>
+
 <%- include('./partials/footer.ejs') %>

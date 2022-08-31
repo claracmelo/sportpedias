@@ -3,11 +3,29 @@
 ------------------------------------------------------------------------ */
 #content-sports{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    overflow-y:auto;
+    height: 430px;
+}
+#contentComment{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y:auto;
+    height: 125px; 
+    width: auto;
 }
 
+#commentText{
 
+    border-radius: 10px;
+    
+    height: 110px; 
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 10px 10px 10px 10px;
+}
 #content-index{
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -26,6 +44,7 @@
 
 #footer
 {
+    
     width: 1366px;
 }
 
@@ -34,11 +53,10 @@
 {
     width: 1110px;
 }
-#content-index1{
-    width: 530px;
-}
+
+
 #content,
-#content1
+#contentNew
 {
     width: 1110px;
 }
@@ -51,7 +69,9 @@
 #sportpediasBKG{
     width: 250px;
 }
-
+#commentText{
+    width: 1030px;
+}
 /* ------------------------------------------------------------------------
                             HEIGHT              
 ------------------------------------------------------------------------ */
@@ -62,9 +82,14 @@
 #header{
     height: 120px;
 }
+#content1,
+#content,
+#contentNew{
+    height: 430px;
+}
 #title,
-#imgHome,
-#content{
+#imgHome
+{
     height: 320px;
 }
 #footerTop,
@@ -85,7 +110,8 @@
 #header{
     padding-top: 22px;
 }
-#content{
+#content,
+#contentNew{
     padding: 24px 24px 24px 24px;
 }
 
@@ -101,7 +127,10 @@
 #content-index{
     padding-top: 24px;
 }
-
+#content-index1{
+    padding-left: 28px;
+    padding-right: 28px;
+}
 
 
 /* ------------------------------------------------------------------------
@@ -113,7 +142,8 @@
 #content-index1,
 #sportpediasBKG,
 #footerTop,
-#imgHome
+#imgHome,
+#contentNew
 {
    border-radius: 10px;
 }
@@ -125,7 +155,8 @@
 #footer{
     margin-top: 147px;
 }
-#content{
+#content,
+#contentNew{
     margin-top: 24px;
 
 }
@@ -135,7 +166,10 @@
 #read-more{
     margin-left: 24px;
 }
-
+#content-index1{
+    margin-left: 85px;
+}
+#contentNew,
 #content,
  #content1, /*trying to center */
 #content-index,
@@ -154,7 +188,8 @@
 ------------------------------------------------------------------------ */
 #bodyGrey,
 #footerBottom,
-body
+body,
+#commentText
 {
     background-color: #F2F2F2;
 }
@@ -162,6 +197,7 @@ body
     background-image: url("/images/home.jpeg");
 }
 #content,
+#contentNew,
 #content-index1,
 #header
 {
@@ -203,7 +239,9 @@ color:#F2F2F2;
 --------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 
-#content, #tabs,
+#content, 
+#contentNew,
+#tabs,
 #footerBottom,
 #content1{
     font-family: 'Lato', sans-serif;

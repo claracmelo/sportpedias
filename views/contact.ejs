@@ -1,21 +1,38 @@
 <%- include('./partials/header.ejs') %>
-<form method="POST" action="/sportpedias">
-    <div class="mb-3">
-      <label for="name" class="form-label">Name: </label>
-          <input class="form-control" d="name" type="text" name="name" placeholder="Enter your name">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">email: </label>
-           <input class="form-control" id="email" type="text" name="email" placeholder="Enter your email">
-        </div>
-        <div >
-          <label for="message" class="form-label">Message:  </label>
-          <input class="form-control" id="img" type="text" name="message" placeholder="Enter your message">
-        </div>
 
-          <br>
+<div id="title">
+  <img id="imgHome" src="/images/contact.jpeg" alt="home" class="img-fluid">
+</div>
+<!-- it needs a div id different -->
+<div id="contentNew" >
+  <!-- rules name -- it needs a div id -->
+  <div>
+      <p id="about">contact</p>
     
-          <input id="subButton" class="form-control" type="submit" name="" value="Send message"/>
-      </form>
-    </div>
+  </div>
+  <!-- Rules list -- it needs a div id -->
+  <div>
+    <form method="POST" action="/sportpedias">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name: </label>
+            <input class="form-control" d="name" type="text" name="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">email: </label>
+             <input class="form-control" id="email" type="text" name="email" placeholder="Enter your email">
+          </div>
+          <div >
+            <label for="message" class="form-label">Message:  </label>
+            <input class="form-control" id="img" type="text" name="message" placeholder="Enter your message">
+          </div>
+  
+            <br>
+      
+            <input id="subButton" class="form-control" type="submit" name="" value="Send message"/>
+        </form>
+      </div>
+</div>
+</div>
+
+
 <%- include('./partials/footer.ejs') %>

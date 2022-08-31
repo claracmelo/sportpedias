@@ -11,11 +11,6 @@ const sportSchema = new mongoose.Schema({
             fact: {type:String},
             img: {type:String}
            }],
-
-        //    facts: [{
-        //         type: mongoose.Schema.Types.ObjectId,
-        //         ref: 'Fact',
-        // }],
     comments:[{
             name: String,
             anonymous: Boolean, 

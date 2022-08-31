@@ -1,20 +1,36 @@
 <%- include('./partials/header.ejs') %>
 
-<form method="POST" action="../comments?_method=PUT" method="POST">
-      <fieldset>
-        <label for="name">Name:</label>
-        <input id="name" type="text" name="name" placeholder="Enter your Name">
-      </fieldset>
+<div id="title">
+  <img id="imgHome" src="/images/comment.jpeg" alt="home" class="img-fluid">
+</div>
 
-      <fieldset>
-        <label for="anonymous">anonymous</label>
-        <input id="anonymous" type="checkbox" name="anonymous">
-      </fieldset>
-      <fieldset>
-        <label for="comment">Comment:</label>
-        <input id="comment" type="text" name="comment" placeholder="Enter your comment">
-      </fieldset>
-      <button>Add your comment!</button>
-    </form>
+<!-- it needs a div id different -->
+<div id="contentNew" >
+  <!-- rules name -- it needs a div id -->
+  <div>
+      <p id="about">Your Comment</p>
+
+  </div>
+  <!-- Rules list -- it needs a div id -->
+  <form method="POST" action="../comments?_method=PUT" method="POST">
+    <fieldset>
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" placeholder="Enter your Name">
+    </fieldset>
+
+    <fieldset>
+      <label for="anonymous">anonymous</label>
+      <input id="anonymous" type="checkbox" name="anonymous">
+    </fieldset>
+    <fieldset>
+      <label for="comment">Comment:</label>
+      <input id="comment" type="text" name="comment" placeholder="Enter your comment">
+    </fieldset>
+    <button>Add your comment!</button>
+  </form>
+</div>
+</div>
+
+
 
   <%- include('./partials/footer.ejs') %>

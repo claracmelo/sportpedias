@@ -1,5 +1,19 @@
 <%- include('./partials/header.ejs') %>
-<form method="POST" action="../facts?_method=PUT" method="POST">
+
+
+<div id="title">
+  <img id="imgHome" src="/images/fact.jpeg" alt="home" class="img-fluid">
+</div>
+
+<!-- it needs a div id different -->
+<div id="contentNew" >
+  <!-- rules name -- it needs a div id -->
+  <div>
+      <p id="about">Facts</p>
+
+  </div>
+  <!-- Rules list -- it needs a div id -->
+  <form method="POST" action="../facts?_method=PUT" method="POST">
     <div class="mb-3">
 
       <label for="name" class="form-label">Name: </label>
@@ -17,5 +31,9 @@
     
           <input id="subButton" class="form-control" type="submit" name="" value="Add New Fact!"/>
       </form>
+</div>
+</div>
+
+
 
 <%- include('./partials/footer.ejs') %>

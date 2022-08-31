@@ -1,36 +1,50 @@
 <%- include('./partials/header.ejs') %>
 
-<div id="content1">
-  <div id="content-sports">
-  <% for(let i=0; i < sports.length; i++) { let sportNumber=i + 1 %>
-    <div id="content-index1">
-      <div id="content-index">
-        <p>
-          <label for="title" id="about">
 
-            <%= sports[i].sport %>
 
-          </label>
-          <br><br>
-          <%= sports[i].about %>
-            <br>
-      </div>
-      <br>
-      <div id="read-more">
-        <a href="/sportpedias/sports/<%= sports[i].id %>" id="link-read">
-          read more
-        </a>
 
-        </form>
-      </div>
-      </p>
-    </div>
-    <% } %>
-  </div>
+<div id="title">
+  <img id="imgHome" src="/images/sports.jpeg" alt="home" class="img-fluid">
 </div>
+<!-- it needs a div id different -->
 
+  <!-- rules name -- it needs a div id -->
+<!-- black border -->
+  <div id="content1">
+    <br>
+<!-- red border -->
+    <div id="content-sports" class="container">
+    <% for(let i=0; i < sports.length; i++) { let sportNumber=i + 1 %>
+      <!-- white background  -->
+      <div id="content-index1">
+        <!-- written content -->
+        <div id="content-index">
+          <p>
+            <label for="title" id="about">
+  
+              <%= sports[i].sport %>
+  
+            </label>
+            <br><br>
+            <%= sports[i].about %>
+              <br>
+        </div>
+        <br>
+        <!-- link read more  -->
+        <div id="read-more">
+          <a href="/sportpedias/sports/<%= sports[i].id %>" id="link-read">
+            read more
+          </a>
+  
+          </form>
+        </div>
+        </p>
+      </div>
+      <% } %>
+    </div>
+  </div>
 
-
+</div>
 
 
                 <!-- <a href="/sportpedias/new"><button>NEW</button></a>
