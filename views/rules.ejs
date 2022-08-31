@@ -1,18 +1,27 @@
 <%- include('./partials/header.ejs') %>
 
        
-    <div id="title">
-        <img id="imgHome" src="/images/<%=(sport.sport).toLowerCase()%>.jpeg" alt="home" class="img-fluid">
-    </div>
-    <!-- it needs a div id different -->
+<div id="title">
+    <input type="image" id="imgHome" src="/images/<%=(sport.sport).toLowerCase()%>.jpeg" alt="home" class="img-fluid">
+
+  <!-- </div> -->
+  <div id="leftTitle">
+    <a href="/sportpedias/sports/<%=sport.id%>">
+      <button id="sportBtn">
+        <label id="textBtn" for="textBtn">&lt;&lt; <%=sport.sport%></label>
+      </button>
+    </a>
+  </div>
     <div id="content" >
         <!-- rules name -- it needs a div id -->
         <div>
-            <p id="about">Rules</p>
-            <a href="/sportpedias/sports/<%=sport.id%>/rules/new"><button>new</button></a>
-        </div>
+            <p id="about"><label id="rules" for="rules">Rules</label> 
+            <a href="/sportpedias/sports/<%=sport.id%>/rules/new">
+                <button id="newBtn"><label id="newText" for="newText"> Add Rule</label></button></a></p>
+        </div >
+        <div id="ruleList" class="container">
         <!-- Rules list -- it needs a div id -->
-        <div>
+        
         <p>
             <ol>
                 <% for(let i=0; i <sport.rules.length; i++) {  %>                        
@@ -22,6 +31,7 @@
                 <% } %>
             </ol> 
         </p>
+        </div>
     </div>
     </div>
 

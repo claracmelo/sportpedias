@@ -1,34 +1,62 @@
 <%- include('./partials/header.ejs') %>
 
 <div id="title">
-    <img id="imgHome" src="/images/list.jpeg" alt="home" class="img-fluid">
+  <input type="image" id="imgHome" src="/images/list.jpeg" alt="home" class="img-fluid">
+
+  <!-- </div> -->
+  <div id="leftTitle">
+    <a href="/sportpedias/sports/<%=sport.id%>">
+      <button id="sportBtn">
+        <label id="textBtn" for="textBtn">&lt;&lt; <%=sport.sport%></label>
+      </button>
+    </a>
+  </div>
+  <div id="content">
+    <div>
+      <p id="about"><label id="rules" for="facts">Facts</label> 
+
+          <a href="/sportpedias/sports/<%=sport.id%>/facts/new"><label id="newText" for="newText"><button id="newBtn">Add Fact</button></label></a>
+        </p>
+    </div >
+    <div  class="container">
+      
+    <% for(let i=0; i < sport.facts.length; i++) { %>
+        <div id="factsBox" class="row">
+          <div class="col ">
+            <p id="about"><label id="rules" for="facts">Fact</label></p>
+              <label for="fact">
+                <%= sport.facts[i].fact %>
+            </label>
+          </div>
+          <div  class="col ">
+            <div >
+              <label for="name">
+                By: <%= sport.facts[i].name %>
+              </label>
+            </div>
+            <div id="factImg">
+              <img id="factsImg" src="<%=sport.facts[i].img%>" alt="sd">
+            </div>
+            <div id="butons">
+              <a href="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>/edit">
+                <button id="btnEdit">
+                  EDIT
+                </button id="btn">
+              </a>
+              <form action="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>?_method=DELETE" method="POST">
+                <button id="btn">
+                  DELETE
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%} %>
+  
+  
+  </div>     
 </div>
-<!-- it needs a div id different -->
-<div id="content" >
-
-
-
-<a href="/sportpedias/sports/<%=sport.id%>/facts/new"><button>new</button></a>
-<% for(let i=0; i < sport.facts.length; i++) { %>
-
-    <label for="name">Author: <%= sport.facts[i].name %></a> </label> <br>
-            
-          Fact: <label for="fact"> <%= sport.facts[i].fact %></label>
-            <br>
-      <br>
-      <p>
-      <img src="<%=sport.facts[i].img%>" alt="sd">
-    </p>
-      <a href="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>/edit">
-        <button>EDIT</button></a>
-
-
-  <form action="/sportpedias/sports/<%=sport.id%>/facts/<%=sport.facts[i].id%>?_method=DELETE" method="POST">
-    <button>DELETE</button>
-  </form>
-
-<%} %>
-
 </p>
 
 <%- include('./partials/footer.ejs') %>

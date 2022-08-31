@@ -14,15 +14,25 @@
     height: 125px; 
     width: auto;
 }
+#rules{
+    font-size: 20px;
+    margin-left:45%;
+    margin-right: 30%;
+}
 
 #addCommentText{
     font-size: 12px;
     color: white;
 }
-
+#newText{
+    font-size: 12px;
+}
 #tabs1{
     float: left;
     width: 1050px;
+}
+#btn{
+    float: right;
 }
 #addComment{
 float: right;
@@ -49,14 +59,34 @@ border: none;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical; 
-    width: 452px;
+    width: 430px;
     overflow: hidden;
   }
 
 
+
+  #ruleList{
+    width: 600px;
+    height: 350px;
+    margin-top: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 20;
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
+  }
+
 /* ------------------------------------------------------------------------
                              WIDTH              
 ------------------------------------------------------------------------ */
+
+#factsBox{
+    width: 430px;
+}
+
+#factDetail{
+    width: 200px;
+}
+
 #header{
     width: 100%;
 }
@@ -91,9 +121,13 @@ border: none;
 #commentText{
     width: 1030px;
 }
+#factsImg{
+    width: 160px;
+}
 /* ------------------------------------------------------------------------
                             HEIGHT              
 ------------------------------------------------------------------------ */
+
 #content-index1{
     height: 195px;
 }
@@ -106,6 +140,10 @@ border: none;
 #contentNew{
     height: 430px;
 }
+#factsImg{
+    height:200px
+}
+#factDetail,
 #title,
 #imgHome
 {
@@ -129,6 +167,8 @@ border: none;
 #header{
     padding-top: 22px;
 }
+
+#newBtn,
 #contentText,
 #sportBtn{
     padding-left: 24px;
@@ -136,7 +176,6 @@ border: none;
 }
 
 #content,
-
 #contentNew{
     padding: 24px 24px 24px 24px;
 }
@@ -161,6 +200,8 @@ border: none;
                              BORDER           
 ------------------------------------------------------------------------ */
 
+#factsImg,
+#newBtn,
 #sportBtn,
 #title,
 #content,
@@ -168,15 +209,22 @@ border: none;
 #sportpediasBKG,
 #footerTop,
 #imgHome,
-#contentNew
+#contentNew,
+#btn,
+#btnEdit
 {
    border-radius: 10px;
 }
 
-#sportBtn
+#sportBtn,
+#newBtn,
+#btn,
+#btnEdit
 {
     border: none;
 }
+
+
 
 /* ------------------------------------------------------------------------
                             MARGIN            
@@ -234,11 +282,17 @@ body,
 {
     background-color: white;
 }
+
+#newBtn,
 #footerTop,
 #sportpediasBKG,
-#sportBtn
+#sportBtn,
+#btn
 {
     background-color: #EB5757;
+}
+#btnEdit{
+    background-color: #5E6770;
 }
 
 /* ------------------------------------------------------------------------
@@ -260,7 +314,10 @@ body,
 color:#F2F2F2;
 }
 #sportpediasName,
-#textBtn
+#textBtn,
+#newBtn,
+#btn,
+#btnEdit
 {
     color: white;
 }
@@ -322,7 +379,10 @@ color:#F2F2F2;
 /* ------------------------------------------------------------------------
                                 
 ------------------------------------------------------------------------ */
-
+#boxFact{
+    display: flex;
+    flex-wrap: wrap
+}
 /* ------------------------------------------------------------------------
                             c            
 ------------------------------------------------------------------------ */
